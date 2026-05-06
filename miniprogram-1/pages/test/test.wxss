@@ -1,0 +1,285 @@
+/* pages/test/test.wxss - 答题页样式 */
+.page-container {
+  min-height: 100vh;
+  padding-bottom: 40rpx;
+}
+
+/* 进度区 */
+.progress-section {
+  padding: 24rpx 32rpx 16rpx;
+  background-color: #FFFFFF;
+}
+
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12rpx;
+}
+
+.progress-label {
+  font-size: 13px;
+  color: #888888;
+}
+
+.progress-count {
+  font-size: 14px;
+  font-weight: 600;
+  color: #07C160;
+}
+
+.progress-bar-bg {
+  height: 8rpx;
+  background-color: #EEEEEE;
+  border-radius: 4rpx;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #07C160, #06D068);
+  border-radius: 4rpx;
+  transition: width 0.3s ease;
+}
+
+/* 题目卡片 */
+.question-card {
+  margin-top: 24rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.question-tag {
+  align-self: flex-start;
+  background-color: #E8F8EF;
+  padding: 6rpx 20rpx;
+  border-radius: 8rpx;
+  margin-bottom: 20rpx;
+}
+
+.question-tag-text {
+  font-size: 12px;
+  color: #07C160;
+  font-weight: 600;
+}
+
+.question-text {
+  font-size: 18px;
+  font-weight: 600;
+  color: #222222;
+  line-height: 1.7;
+  margin-bottom: 20rpx;
+}
+
+/* 维度标签 */
+.type-tag {
+  align-self: flex-start;
+  padding: 4rpx 16rpx;
+  border-radius: 6rpx;
+}
+
+.type-tag-mood {
+  background-color: #FEF3C7;
+}
+
+.type-tag-oppose {
+  background-color: #FEE2E2;
+}
+
+.type-tag-school {
+  background-color: #DBEAFE;
+}
+
+.type-tag-text {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.type-tag-mood .type-tag-text {
+  color: #B45309;
+}
+
+.type-tag-oppose .type-tag-text {
+  color: #DC2626;
+}
+
+.type-tag-school .type-tag-text {
+  color: #2563EB;
+}
+
+/* 选项区域 */
+.options-section {
+  padding: 0 32rpx;
+  margin-top: 16rpx;
+}
+
+.option-item {
+  display: flex;
+  align-items: center;
+  background-color: #FFFFFF;
+  border-radius: 16rpx;
+  padding: 28rpx 24rpx;
+  margin-bottom: 16rpx;
+  border: 2rpx solid #EEEEEE;
+  transition: all 0.2s;
+}
+
+.option-selected {
+  border-color: #07C160;
+  background-color: #F0FFF6;
+  box-shadow: 0 2rpx 12rpx rgba(7, 193, 96, 0.15);
+}
+
+.option-radio {
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  border: 3rpx solid #CCCCCC;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20rpx;
+  flex-shrink: 0;
+  transition: all 0.2s;
+}
+
+.option-selected .option-radio {
+  border-color: #07C160;
+}
+
+.radio-inner {
+  width: 22rpx;
+  height: 22rpx;
+  border-radius: 50%;
+  background-color: #07C160;
+}
+
+.option-text {
+  flex: 1;
+  font-size: 15px;
+  color: #333333;
+  line-height: 1.5;
+}
+
+.option-score {
+  font-size: 13px;
+  color: #AAAAAA;
+  margin-left: 12rpx;
+  flex-shrink: 0;
+}
+
+.option-selected .option-score {
+  color: #07C160;
+  font-weight: 600;
+}
+
+/* 底部导航 */
+.nav-section {
+  padding: 32rpx 32rpx 0;
+}
+
+.nav-row {
+  display: flex;
+  gap: 24rpx;
+}
+
+.nav-btn {
+  flex: 1;
+  text-align: center;
+  padding: 22rpx 0;
+  border-radius: 12rpx;
+  font-size: 15px;
+  font-weight: 500;
+  background-color: #FFFFFF;
+  color: #333333;
+  border: 2rpx solid #DDDDDD;
+}
+
+.nav-btn:active {
+  background-color: #F9F9F9;
+}
+
+.nav-btn-disabled {
+  opacity: 0.4;
+}
+
+.nav-btn-prev {
+  color: #666666;
+}
+
+.nav-btn-next {
+  background-color: #07C160;
+  color: #FFFFFF;
+  border-color: #07C160;
+}
+
+.nav-btn-next:active {
+  background-color: #06AD56;
+}
+
+.submit-btn {
+  margin-top: 24rpx;
+}
+
+/* 跳转面板 */
+.jump-section {
+  margin: 32rpx 32rpx 0;
+  background-color: #FFFFFF;
+  border-radius: 16rpx;
+  padding: 20rpx 24rpx;
+}
+
+.jump-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.jump-title-text {
+  font-size: 14px;
+  color: #888888;
+  font-weight: 500;
+}
+
+.jump-arrow {
+  font-size: 14px;
+  color: #AAAAAA;
+  transition: transform 0.2s;
+}
+
+.jump-arrow-up {
+  transform: rotate(180deg);
+}
+
+.jump-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16rpx;
+  margin-top: 20rpx;
+  padding-top: 20rpx;
+  border-top: 1rpx solid #F0F0F0;
+}
+
+.jump-dot {
+  width: 64rpx;
+  height: 64rpx;
+  border-radius: 12rpx;
+  background-color: #F5F5F5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  color: #999999;
+  font-weight: 500;
+}
+
+.jump-dot-done {
+  background-color: #E8F8EF;
+  color: #07C160;
+}
+
+.jump-dot-current {
+  background-color: #07C160;
+  color: #FFFFFF;
+  font-weight: 700;
+}

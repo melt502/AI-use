@@ -1,0 +1,295 @@
+/* pages/result/result.wxss - 结果页样式 */
+.page-container {
+  min-height: 100vh;
+  padding-bottom: 60rpx;
+}
+
+/* 顶部结果区 */
+.result-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60rpx 32rpx 48rpx;
+  border-radius: 0 0 40rpx 40rpx;
+}
+
+.result-header-low {
+  background: linear-gradient(135deg, #07C160, #06AD56);
+}
+
+.result-header-mid {
+  background: linear-gradient(135deg, #F59E0B, #D97706);
+}
+
+.result-header-high {
+  background: linear-gradient(135deg, #EF4444, #DC2626);
+}
+
+.result-header-label {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+  letter-spacing: 4rpx;
+  margin-bottom: 24rpx;
+}
+
+.score-circle {
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  margin-bottom: 12rpx;
+  border: 4rpx solid rgba(255, 255, 255, 0.3);
+}
+
+.score-number {
+  font-size: 64px;
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1;
+}
+
+.score-unit {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.8);
+  margin-left: 4rpx;
+  font-weight: 500;
+}
+
+.score-range {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 20rpx;
+}
+
+/* 等级标签 */
+.level-badge {
+  padding: 8rpx 32rpx;
+  border-radius: 40rpx;
+}
+
+.level-badge-low {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.level-badge-mid {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.level-badge-high {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.level-badge-text {
+  font-size: 14px;
+  color: #FFFFFF;
+  font-weight: 600;
+  letter-spacing: 2rpx;
+}
+
+/* 风险说明卡片 */
+.risk-card {
+  margin-top: 24rpx;
+}
+
+.risk-title-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16rpx;
+}
+
+.risk-dot {
+  width: 12rpx;
+  height: 12rpx;
+  border-radius: 50%;
+  margin-right: 12rpx;
+}
+
+.risk-dot-low {
+  background-color: #07C160;
+}
+
+.risk-dot-mid {
+  background-color: #F59E0B;
+}
+
+.risk-dot-high {
+  background-color: #EF4444;
+}
+
+.risk-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: #222222;
+}
+
+.risk-desc {
+  font-size: 14px;
+  color: #555555;
+  line-height: 1.8;
+}
+
+/* 维度分数卡片 */
+.dim-card {
+  margin-top: 0;
+}
+
+.dim-card-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #222222;
+  margin-bottom: 28rpx;
+  display: block;
+}
+
+.dim-score-item {
+  margin-bottom: 28rpx;
+}
+
+.dim-score-item:last-child {
+  margin-bottom: 0;
+}
+
+.dim-score-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12rpx;
+}
+
+.dim-dot {
+  width: 14rpx;
+  height: 14rpx;
+  border-radius: 50%;
+  margin-right: 12rpx;
+  flex-shrink: 0;
+}
+
+.dim-dot-mood {
+  background-color: #F59E0B;
+}
+
+.dim-dot-oppose {
+  background-color: #EF4444;
+}
+
+.dim-dot-school {
+  background-color: #3B82F6;
+}
+
+.dim-score-name {
+  flex: 1;
+  font-size: 14px;
+  color: #444444;
+  font-weight: 500;
+}
+
+.dim-score-value {
+  font-size: 16px;
+  font-weight: 700;
+  color: #222222;
+}
+
+.dim-score-max {
+  font-size: 13px;
+  color: #AAAAAA;
+  font-weight: 400;
+}
+
+.dim-score-bar-bg {
+  height: 10rpx;
+  background-color: #F0F0F0;
+  border-radius: 5rpx;
+  overflow: hidden;
+}
+
+.dim-score-bar-fill {
+  height: 100%;
+  border-radius: 5rpx;
+  transition: width 0.6s ease;
+}
+
+.dim-score-bar-mood {
+  background: linear-gradient(90deg, #F59E0B, #FBBF24);
+}
+
+.dim-score-bar-oppose {
+  background: linear-gradient(90deg, #EF4444, #F87171);
+}
+
+.dim-score-bar-school {
+  background: linear-gradient(90deg, #3B82F6, #60A5FA);
+}
+
+/* 建议卡片 */
+.advice-card {
+  margin-top: 0;
+}
+
+.advice-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #222222;
+  margin-bottom: 24rpx;
+  display: block;
+}
+
+.advice-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.advice-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20rpx;
+}
+
+.advice-item:last-child {
+  margin-bottom: 0;
+}
+
+.advice-num {
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  background-color: #E8F8EF;
+  color: #07C160;
+  font-size: 13px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 16rpx;
+  flex-shrink: 0;
+  margin-top: 2rpx;
+}
+
+.advice-text {
+  flex: 1;
+  font-size: 14px;
+  color: #555555;
+  line-height: 1.7;
+}
+
+/* 按钮区 */
+.btn-wrap {
+  padding: 0 32rpx;
+  margin-top: 32rpx;
+}
+
+/* 底部免责 */
+.disclaimer-bottom {
+  margin: 40rpx 32rpx 0;
+  padding: 20rpx 24rpx;
+  background-color: #FFF8E1;
+  border-radius: 12rpx;
+  border-left: 6rpx solid #F59E0B;
+}
+
+.disclaimer-bottom-text {
+  font-size: 12px;
+  color: #8D6E00;
+  line-height: 1.7;
+}

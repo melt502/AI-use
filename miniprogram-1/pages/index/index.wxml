@@ -1,0 +1,88 @@
+<!-- pages/index/index.wxml - 首页 -->
+<view class="page-container">
+  <!-- 顶部装饰 -->
+  <view class="header-bg">
+    <view class="header-circle header-circle-1"></view>
+    <view class="header-circle header-circle-2"></view>
+  </view>
+
+  <!-- 主内容区 -->
+  <view class="main-content">
+    <!-- 标题区域 -->
+    <view class="title-section">
+      <text class="title-label">成人ADHD自评工具</text>
+      <text class="title-main">文德犹他自评量表</text>
+      <text class="title-sub">WURS-15</text>
+    </view>
+
+    <!-- 说明卡片 -->
+    <view class="card intro-card">
+      <view class="intro-item">
+        <view class="intro-icon intro-icon-clock">
+          <text class="icon-text">回</text>
+        </view>
+        <view class="intro-text-wrap">
+          <text class="intro-title">回忆作答</text>
+          <text class="intro-desc">请回忆你6~10岁期间的表现进行作答</text>
+        </view>
+      </view>
+      <view class="intro-divider"></view>
+      <view class="intro-item">
+        <view class="intro-icon intro-icon-list">
+          <text class="icon-text">题</text>
+        </view>
+        <view class="intro-text-wrap">
+          <text class="intro-title">共15题</text>
+          <text class="intro-desc">每题5个选项，预计3~5分钟完成</text>
+        </view>
+      </view>
+      <view class="intro-divider"></view>
+      <view class="intro-item">
+        <view class="intro-icon intro-icon-dim">
+          <text class="icon-text">维</text>
+        </view>
+        <view class="intro-text-wrap">
+          <text class="intro-title">三个维度</text>
+          <text class="intro-desc">心境障碍 / 对立违抗性行为 / 学校工作问题</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 维度说明卡片 -->
+    <view class="card dim-card">
+      <text class="dim-card-title">量表维度说明</text>
+      <view class="dim-list">
+        <view class="dim-item">
+          <view class="dim-dot dim-dot-mood"></view>
+          <text class="dim-name">心境障碍（7题）</text>
+        </view>
+        <view class="dim-item">
+          <view class="dim-dot dim-dot-oppose"></view>
+          <text class="dim-name">对立违抗性行为（6题）</text>
+        </view>
+        <view class="dim-item">
+          <view class="dim-dot dim-dot-school"></view>
+          <text class="dim-name">学校/工作问题（2题）</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 开始按钮 -->
+    <view class="btn-wrap" style="margin-top: 48rpx;">
+      <view class="btn-primary" bindtap="startTest">开始测评</view>
+    </view>
+
+    <!-- 免责提示 -->
+    <view class="disclaimer">
+      <text class="disclaimer-text">本量表仅为成人ADHD自评工具，结果不能作为诊断依据。若分数偏高，建议到精神科/心理科做专业评估。</text>
+    </view>
+
+    <!-- 隐私提示 -->
+    <view class="privacy">
+      <view class="privacy-icon-wrap">
+        <text class="privacy-icon-text">锁</text>
+      </view>
+      <text class="privacy-text">不收集姓名、生日等个人信息，数据仅本地计算，不上传任何服务器</text>
+    </view>
+  </view>
+</view>

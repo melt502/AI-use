@@ -1,0 +1,89 @@
+<!-- pages/result/result.wxml - 结果页 -->
+<view class="page-container">
+  <!-- 顶部结果区 -->
+  <view class="result-header result-header-{{level}}">
+    <text class="result-header-label">测评结果</text>
+    <view class="score-circle">
+      <text class="score-number">{{totalScore}}</text>
+      <text class="score-unit">分</text>
+    </view>
+    <text class="score-range">满分 60 分</text>
+    <view class="level-badge level-badge-{{level}}">
+      <text class="level-badge-text">{{levelText}}</text>
+    </view>
+  </view>
+
+  <!-- 风险说明卡片 -->
+  <view class="card risk-card">
+    <view class="risk-title-row">
+      <view class="risk-dot risk-dot-{{level}}"></view>
+      <text class="risk-title">{{levelText}}</text>
+    </view>
+    <text class="risk-desc">{{levelDesc}}</text>
+  </view>
+
+  <!-- 维度分数卡片 -->
+  <view class="card dim-card">
+    <text class="dim-card-title">维度得分详情</text>
+
+    <!-- 心境障碍 -->
+    <view class="dim-score-item">
+      <view class="dim-score-header">
+        <view class="dim-dot dim-dot-mood"></view>
+        <text class="dim-score-name">心境障碍</text>
+        <text class="dim-score-value">{{moodScore}}<text class="dim-score-max"> / 28</text></text>
+      </view>
+      <view class="dim-score-bar-bg">
+        <view class="dim-score-bar-fill dim-score-bar-mood" style="{{moodStyle}}"></view>
+      </view>
+    </view>
+
+    <!-- 对立违抗性行为 -->
+    <view class="dim-score-item">
+      <view class="dim-score-header">
+        <view class="dim-dot dim-dot-oppose"></view>
+        <text class="dim-score-name">对立违抗性行为</text>
+        <text class="dim-score-value">{{opposeScore}}<text class="dim-score-max"> / 24</text></text>
+      </view>
+      <view class="dim-score-bar-bg">
+        <view class="dim-score-bar-fill dim-score-bar-oppose" style="{{opposeStyle}}"></view>
+      </view>
+    </view>
+
+    <!-- 学校/工作问题 -->
+    <view class="dim-score-item">
+      <view class="dim-score-header">
+        <view class="dim-dot dim-dot-school"></view>
+        <text class="dim-score-name">学校/工作问题</text>
+        <text class="dim-score-value">{{schoolScore}}<text class="dim-score-max"> / 8</text></text>
+      </view>
+      <view class="dim-score-bar-bg">
+        <view class="dim-score-bar-fill dim-score-bar-school" style="{{schoolStyle}}"></view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 建议卡片 -->
+  <view class="card advice-card">
+    <text class="advice-title">建议</text>
+    <view class="advice-list">
+      <view class="advice-item" wx:for="{{adviceList}}" wx:key="index">
+        <view class="advice-num">{{index + 1}}</view>
+        <text class="advice-text">{{item}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 重新测评按钮 -->
+  <view class="btn-wrap">
+    <view class="btn-primary" bindtap="retakeTest">重新测评</view>
+  </view>
+  <view class="btn-wrap" style="margin-top: 16rpx;">
+    <view class="btn-secondary" bindtap="backHome">返回首页</view>
+  </view>
+
+  <!-- 底部免责 -->
+  <view class="disclaimer-bottom">
+    <text class="disclaimer-bottom-text">本量表仅为成人ADHD自评工具，结果不能作为诊断依据。若分数偏高，建议到精神科/心理科做专业评估。</text>
+  </view>
+</view>

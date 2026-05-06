@@ -1,0 +1,90 @@
+<!-- pages/test/test.wxml - 答题页 -->
+<view class="page-container">
+  <!-- 顶部进度区 -->
+  <view class="progress-section">
+    <view class="progress-header">
+      <text class="progress-label">答题进度</text>
+      <text class="progress-count">{{currentIndex + 1}} / {{totalQuestions}}</text>
+    </view>
+    <view class="progress-bar-bg">
+      <view class="progress-bar-fill" style="{{progressStyle}}"></view>
+    </view>
+  </view>
+
+  <!-- 题目卡片 -->
+  <view class="card question-card">
+    <!-- 题号标签 -->
+    <view class="question-tag">
+      <text class="question-tag-text">第 {{currentIndex + 1}} 题</text>
+    </view>
+    <!-- 题目文字 -->
+    <text class="question-text">{{currentQuestion.text}}</text>
+    <!-- 维度标签 -->
+    <view class="type-tag type-tag-{{currentQuestion.type}}">
+      <text class="type-tag-text">{{typeLabel}}</text>
+    </view>
+  </view>
+
+  <!-- 选项区域 -->
+  <view class="options-section">
+    <view
+      class="option-item {{selectedScore === item.score ? 'option-selected' : ''}}"
+      wx:for="{{options}}"
+      wx:key="score"
+      bindtap="selectOption"
+      data-score="{{item.score}}"
+    >
+      <view class="option-radio">
+        <view class="radio-inner" wx:if="{{selectedScore === item.score}}"></view>
+      </view>
+      <text class="option-text">{{item.text}}</text>
+      <text class="option-score">{{item.score}}分</text>
+    </view>
+  </view>
+
+  <!-- 底部导航按钮 -->
+  <view class="nav-section">
+    <view class="nav-row">
+      <view
+        class="nav-btn nav-btn-prev {{currentIndex === 0 ? 'nav-btn-disabled' : ''}}"
+        bindtap="prevQuestion"
+      >
+        上一题
+      </view>
+      <view
+        class="nav-btn nav-btn-next {{currentIndex === totalQuestions - 1 ? 'nav-btn-disabled' : ''}} {{selectedScore === -1 ? 'nav-btn-disabled' : ''}}"
+        bindtap="nextQuestion"
+      >
+        下一题
+      </view>
+    </view>
+
+    <!-- 提交按钮（最后一题时显示） -->
+    <view
+      class="btn-primary submit-btn"
+      wx:if="{{currentIndex === totalQuestions - 1}}"
+      bindtap="submitTest"
+    >
+      提交测评
+    </view>
+  </view>
+
+  <!-- 题目跳转面板 -->
+  <view class="jump-section">
+    <view class="jump-title" bindtap="toggleJumpPanel">
+      <text class="jump-title-text">题目跳转</text>
+      <text class="jump-arrow {{showJumpPanel ? 'jump-arrow-up' : ''}}">▾</text>
+    </view>
+    <view class="jump-grid" wx:if="{{showJumpPanel}}">
+      <view
+        class="jump-dot {{answers[item.index] !== undefined && answers[item.index] !== -1 ? 'jump-dot-done' : ''}} {{currentIndex === item.index ? 'jump-dot-current' : ''}}"
+        wx:for="{{jumpList}}"
+        wx:key="index"
+        bindtap="jumpToQuestion"
+        data-index="{{item.index}}"
+      >
+        {{item.index + 1}}
+      </view>
+    </view>
+  </view>
+</view>
